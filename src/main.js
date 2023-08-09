@@ -6,13 +6,13 @@ function addToList() {
   /** @ts-expect-error @type HTMLInputElement*/
   const definitionInput = document.getElementById('newVocDef');
   vocabularyList.push({ name: nameInput.value, definition: definitionInput.value });
-  renderList();
+  renderList(vocabularyList);
 }
-function renderList(postionToEdit) {
+function renderList(filter, postionToEdit) {
   const list = document.querySelector('.VocabularyList');
   if (list) {
     list.innerHTML = '';
-    for (let i = 0; i < vocabularyList.length; i++) {
+    for (let i = 0; i < filter.length; i++) {
       //--------------------------------------
       const tr = document.createElement('tr');
       const deltd = document.createElement('td');
@@ -31,8 +31,8 @@ function renderList(postionToEdit) {
         editButton.onclick = () => editVocabulary(i);
         delButton.innerText = 'Delete';
         editButton.innerText = 'Edit';
-        nametd.innerHTML = vocabularyList[i].name;
-        deftd.innerHTML = vocabularyList[i].definition;
+        nametd.innerHTML = filter[i].name;
+        deftd.innerHTML = filter[i].definition;
         deltd.appendChild(delButton);
         edittd.appendChild(editButton);
         tr.appendChild(edittd);
@@ -40,8 +40,8 @@ function renderList(postionToEdit) {
         const newName = document.createElement('input');
         const newDefinition = document.createElement('input');
         newName.className = 'newName';
-        newName.value = vocabularyList[i].name;
-        newDefinition.value = vocabularyList[i].definition;
+        newName.value = filter[i].name;
+        newDefinition.value = filter[i].definition;
         newDefinition.className = 'newDefinition';
         nametd.appendChild(newName);
         deftd.appendChild(newDefinition);
@@ -55,10 +55,10 @@ function renderList(postionToEdit) {
 }
 function deleteVocabulary(position) {
   vocabularyList.splice(position, 1);
-  renderList();
+  renderList(vocabularyList);
 }
 function editVocabulary(position) {
-  renderList(position);
+  renderList(vocabularyList, position);
 }
 function safeEdit(position) {
   /** @ts-expect-error @type HTMLInputElement*/
@@ -68,6 +68,10 @@ function safeEdit(position) {
   if (newNameInput.value === '' || newDefinitionInput.value === '') return;
   vocabularyList[position].name = newNameInput.value;
   vocabularyList[position].definition = newDefinitionInput.value;
-  renderList();
+  renderList(vocabularyList);
 }
-function search()
+function search() {
+  /** @ts-expect-error @type HTMLInputElement*/
+  const searchQuerry = document.querySelector('.search').value;
+  renderList(vocabularyList.filter(a => a.name.includes(searchQuerry) || a.definition.includes(searchQuerry)));
+}

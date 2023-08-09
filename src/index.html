@@ -10,7 +10,7 @@
   <body>
     <main>
       <h1>Vocabulary list</h1>
-      <div class="7u">
+      <div class="inputs">
         <form onsubmit="event.preventDefault();addToList()">
           <div class="newVocabulary">
             <input type="text" name="newVocName" id="newVocName" placeholder="Vocabulary Name" required />
@@ -18,8 +18,9 @@
             <button>Create new Variable</button>
           </div>
         </form>
-        <form>
+        <form class="search" onsubmit="event.preventDefault()">
           <input type="text" placeholder="What are you searching for?" />
+          <button onclick="search()">Search</button>
         </form>
       </div>
       <table>
