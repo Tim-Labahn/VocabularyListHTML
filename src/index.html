@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" />
-    <title>Vocable List</title>
+    <title>Vocabulary List</title>
   </head>
 
   <body>
     <main>
-      <h1>Vocable list</h1>
-      <form onsubmit="event.preventDefault();addToList(), showList()">
-        <div class="newVocable">
-          <input type="text" name="newVocName" id="newVocName" placeholder="Vocable Name" required />
-          <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocable definition" required />
+      <h1>Vocabulary list</h1>
+      <form onsubmit="event.preventDefault();addToList()">
+        <div class="newVocabulary">
+          <input type="text" name="newVocName" id="newVocName" placeholder="Vocabulary Name" required />
+          <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocabulary definition" required />
           <button>Create new Variable</button>
         </div>
       </form>
@@ -21,10 +21,12 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>definition</th>
+            <th>Definition</th>
+            <th class="delete"></th>
+            <th class="edit"></th>
           </tr>
         </thead>
-        <tbody class="VocableList"></tbody>
+        <tbody class="VocabularyList"></tbody>
       </table>
     </main>
     <footer></footer>
