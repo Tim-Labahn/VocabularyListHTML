@@ -1,56 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
     <title>Vocable List</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <h1>Vocable list</h1>
-        <form onsubmit="event.preventDefault();displayMessage()">
-            <div class="newVocable">
-                <p>
-                    <input type="text" name="newVocName" id="newVocName" placeholder="Vocable Name" required>
-                    <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocable definition" required>
-                    <!-- <script>let name = ""</script> -->
-                    <button>Create new Variable</button>
-                <p id="showinputhere"></p>
-            </div>
-        </form>
-        <table>
-            <article>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>definition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <div class="Vocable1">
-                        <tr>
-
-                        </tr>
-                    </div>
-                    <div class="species2">
-                        <tr>
-                        </tr>
-                    </div>
-                </tbody>
-            </article>
-        </table>
-
-
-
-
+      <h1>Vocable list</h1>
+      <form onsubmit="event.preventDefault();addToList(), showList()">
+        <div class="newVocable">
+          <input type="text" name="newVocName" id="newVocName" placeholder="Vocable Name" required />
+          <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocable definition" required />
+          <button>Create new Variable</button>
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>definition</th>
+          </tr>
+        </thead>
+        <tbody class="VocableList"></tbody>
+      </table>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
     <script src="main.js"></script>
-</body>
-
-
+  </body>
 </html>
