@@ -5,159 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>Otter - Wikipedia</title>
-
+    <title>Vocable List</title>
+    <link href="vocabularyList.js" rel="js">
 </head>
 
 <body>
-    <header class="navbar">
-
-        <a class="nav" href="index.html"> HomePage</a>
-
-        <a class="nav" href="https://en.wikipedia.org/wiki/Otter"> Wikipedia-Otter</a>
-
-        <a class="nav" href="aboutMe.html"> AboutMe</a>
-
-        <form class="login" action="login.html">
-            <button>Login</button>
-        </form>
-
-
-        <hr>
-    </header>
-    <h1>&#129430Otter! &#128056</h1>
-    <hr>
     <main>
-        <div class="container">
-            <img class="mainimg" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG"
-                alt="bild einer otters">
-            <div class="text">
-                <label for="I like him">Do you like this otter?</label>
-                <input type="checkbox" name="otter" id="otter">
+        <h1>Vocable list</h1>
+        <form>
+            <div class="newVocable">
+                <p>
+                    <input type="text" name="newVocName" id="newVocName" placeholder="Vocable Name" required>
+                    <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocable definition" required>
+                    <!-- <script>let name = ""</script> -->
+                    <button>Create new Variable</button onclick="addNewVocable(), displayMessage()">
+                <p id="showinputhere"></p>
+                <script>
+                    function displayMessage() {
+                        let themsg = document.getElementById("newVocName").value;
+                        if (themsg) {
+                            document.getElementById("showinputhere").innerHTML = themsg;
+                        }
+                        else {
+                            document.getElementById("showinputhere").innerHTML = "No message set";
+                        }
+                    }
+                </script>
+
             </div>
-        </div>
-        <button onclick="boopNose()" class="boop his nose" type="button">Click here to boop his nose</button>
-        <script>
-            var boopCounter = 0;
-
-            function boopNose() {
-                boopCounter++;
-                updateCounter();
-            }
-
-            function updateCounter() {
-                var counterElement = document.getElementById("boopCounter");
-                counterElement.textContent = boopCounter;
-            }
-        </script>
-        <p>You booped his nose <span id="boopCounter">0</span> times</p>
-        <p>
-            <b><a href="https://en.wikipedia.org/wiki/Otter">Otters</a></b> are carnivorous mammals in the
-            subfamily
-            Lutrinae. The 13 extant otter species are
-            all
-            semiaquatic,
-            aquatic, or marine, with diets based on fish and invertebrates. Lutrinae is a branch of the
-            Mustelidae
-            family,
-            which also includes weasels, badgers, mink, and wolverines, among other animals.
-        </p>
-        <h2>Etymology</h2>
-        <hr>
-        <p>
-            The word otter derives from the Old English word otor or oter. This, and cognate words in other
-            Indo-European
-            languages, ultimately stem from the Proto-Indo-European language root *wódr̥, which also gave rise to
-            the
-            English word "water".<sup>[4]</sup>[5]</p>
-        <h2>Relation with humans</h2>
-        <hr>
-        <div class="card">
-            <img class="iAmOtter" alt="" src="https://img-9gag-fun.9cache.com/photo/adLNOXN_460s.jpg">
-
-        </div>
-        <h3>Hunting</h3>
-
-        <p>
-            Otters have been hunted for their pelts from at least the 1700s, although it may have begun well before
-            then.
-            Early hunting methods included darts, arrows, nets and snares but later, traps were set on land and guns
-            used.
-
-            There has been a long history of otter pelts being worn around the world. In China it was standard for
-            the
-            royalty to wear robes made from them. People that were financially high in status also wore them. The
-            tails of
-            otters were often made into items for men to wear. These included hats and belts. Even some types of
-            mittens for
-            children have been made from the fur of otters.[25]</p>
-        <h3>Fishing for humans</h3>
-        <p>
-            For many generations, fishermen in southern Bangladesh have bred smooth-coated otters and used them to
-            chase
-            fish into their nets. Once a widespread practice, passed down from father to son throughout many
-            communities in
-            Asia, this traditional use of domesticated wild animals is still in practice in the district of Narail,
-            Bangladesh.[29][30]</p>
-
-        <h2>Species</h2>
-        <hr>
+        </form>
         <table>
             <article>
-
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Genus</th>
-                        <th>Species</th>
+                        <th>Name</th>
+                        <th>definition</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <div class="species1">
+                    <div class="Vocable1">
                         <tr>
-                            <td scope="row"> <img class="spciesimg"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fischotter_Lutra_lutra1.jpg/175px-Fischotter_Lutra_lutra1.jpg"
-                                    alt="bild einer otters"></td>
-                            <td scope="row"> Lutra Brisson, 1762</td>
-                            <td scope="row">
-                                <ul>
-                                    <li>Eurasian otter (Lutra lutra)</li>
-                                    <li>Hairy-nosed otter (Lutra sumatrana)</li>
-                                </ul>
-                            </td>
+
                         </tr>
                     </div>
                     <div class="species2">
                         <tr>
-                            <td scope="row"> <img class="spciesimg"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spotted-necked_otter_1.jpg/175px-Spotted-necked_otter_1.jpg"
-                                    alt="bild einer otters"></td>
-                            <td scope="row"> Hydricits Pocock, 1921</td>
-                            <td scope="row">
-                                <ul>
-                                    <li>Spotted-necked otter</li>
-                                </ul>
-                            </td>
                         </tr>
                     </div>
                 </tbody>
             </article>
         </table>
-        <hr>
-        <p>
-            what is your favorite Otter?
-            <input type="text" placeholder="what are you waiting for?">
-        </p>
-        <form action="https://www.google.com/search?q=">
-            <input placeholder="Enter what you wanna search." type="text" name="query">
-            <button place>Search Google</button>
-        </form>
+
+
+
+
     </main>
     <footer>
-        <p>This is my website, and I made it with love. &#128151</p>
-        <ul>
-        </ul>
-        </p>
     </footer>
 </body>
 

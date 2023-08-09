@@ -1,27 +1,21 @@
 h1 {
-    background-color: rgb(129, 89, 2);
-    color: #dda15e;
+    background-color: #489fb5;
+    color: #ffa62b;
     text-align: center;
+
+
 }
 
 body {
-    background-color: #fefae0;
-    color: #283618;
+    background-color: #ede7e3;
+    color: #16697a;
     text-align: left;
     font-weight: 200;
     margin: 0;
     padding: 0;
 }
 
-.navbar {
-    background-color: #606c38;
-    text-align: left;
-    letter-spacing: 0.02cm;
-    border-radius: 10px;
-    word-spacing: 1000%;
-    margin-bottom: -1cm;
-    word-spacing: 1cm;
-}
+
 
 .login {
     text-align: right;
@@ -70,7 +64,7 @@ table {
     border-width: 100px;
     border: rgb(0, 0, 0);
     border-style: dotted;
-    margin-left: 33%;
+    margin-left: 1%;
 }
 
 article {
@@ -85,17 +79,6 @@ article {
     text-align: center;
 }
 
-.iAmOtter {
-    width: 200px;
-    border: 5px solid rgb(102, 76, 4);
-    border-radius: 50%;
-    transition: 10s;
-}
-
-.iAmOtter:hover {
-    width: 200px;
-    border: 5px solid rgb(253, 190, 15);
-    border-radius: 50%;
-    margin-left: 750%;
-    rotate: 90;
+.newVocable {
+    margin-left: 1%;
 }
