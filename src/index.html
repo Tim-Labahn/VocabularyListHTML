@@ -10,13 +10,18 @@
   <body>
     <main>
       <h1>Vocabulary list</h1>
-      <form onsubmit="event.preventDefault();addToList()">
-        <div class="newVocabulary">
-          <input type="text" name="newVocName" id="newVocName" placeholder="Vocabulary Name" required />
-          <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocabulary definition" required />
-          <button>Create new Variable</button>
-        </div>
-      </form>
+      <div class="7u">
+        <form onsubmit="event.preventDefault();addToList()">
+          <div class="newVocabulary">
+            <input type="text" name="newVocName" id="newVocName" placeholder="Vocabulary Name" required />
+            <input type="text" name="newVocDef" id="newVocDef" placeholder="Vocabulary definition" required />
+            <button>Create new Variable</button>
+          </div>
+        </form>
+        <form>
+          <input type="text" placeholder="What are you searching for?" />
+        </form>
+      </div>
       <table>
         <thead>
           <tr>
